@@ -1,4 +1,4 @@
-library(dplyr)
+library(dplyr, warn.conflicts = F)
 library(readr)
 
 source("helpers/aoc.R")
