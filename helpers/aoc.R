@@ -1,4 +1,5 @@
 library(httr)
+library(rvest)
 # .aoc_session contains session cookie
 
 get_aoc <- function(year_=NULL, day_=NULL){
@@ -14,26 +15,14 @@ get_aoc <- function(year_=NULL, day_=NULL){
   if (!file.exists(filename)){
     resp <- GET(url, set_cookies(AOC_COOKIES))
     write(content(resp, as = "text"), file = filename)
-
-    aoc <- read_html(paste0("https://adventofcode.com/",year,"/day/",as.numeric(day))) 
-    aoc %>% html_element("article.day-desc > pre:first-of-type > code") %>% html_text() %>% write_file(paste0(filename,"_sample_1"))
-    message("Sample 1:\n")
-    read_file(paste0(filename,"_sample_1")) %>% cat()
   }
-<<<<<<< HEAD
-  message("top 25 lines:\n")
-  read_lines(filename, n_max = 25) %>% paste(collapse = "\n") %>% cat()
-=======
   message("\n# top 25 lines ------------------------------------------------------------\n")
   read_lines(filename, n_max = 25) %>% paste(collapse = "\n") %>% cat()
   message("\n# -------------------------------------------------------------------------\n")
->>>>>>> e8257fb (template & flow changes)
 
   return(filename)
 }
 
-<<<<<<< HEAD
-=======
 get_sample <- function(year_=NULL, day_=NULL){
   if (is.null(year_) || is.null(day_)){
     date_ <-strsplit(format(Sys.Date(), "%Y,%d"), ",") |> unlist()
@@ -53,6 +42,3 @@ get_sample <- function(year_=NULL, day_=NULL){
   message("\n# -------------------------------------------------------------------------\n")
   return(s)
 }
-
-
->>>>>>> e8257fb (template & flow changes)
