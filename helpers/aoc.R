@@ -20,20 +20,13 @@ get_aoc <- function(year_=NULL, day_=NULL){
     message("Sample 1:\n")
     read_file(paste0(filename,"_sample_1")) %>% cat()
   }
-<<<<<<< HEAD
-  message("top 25 lines:\n")
-  read_lines(filename, n_max = 25) %>% paste(collapse = "\n") %>% cat()
-=======
   message("\n# top 25 lines ------------------------------------------------------------\n")
   read_lines(filename, n_max = 25) %>% paste(collapse = "\n") %>% cat()
   message("\n# -------------------------------------------------------------------------\n")
->>>>>>> e8257fb (template & flow changes)
 
   return(filename)
 }
 
-<<<<<<< HEAD
-=======
 get_sample <- function(year_=NULL, day_=NULL){
   if (is.null(year_) || is.null(day_)){
     date_ <-strsplit(format(Sys.Date(), "%Y,%d"), ",") |> unlist()
@@ -53,6 +46,3 @@ get_sample <- function(year_=NULL, day_=NULL){
   message("\n# -------------------------------------------------------------------------\n")
   return(s)
 }
-
-
->>>>>>> e8257fb (template & flow changes)
