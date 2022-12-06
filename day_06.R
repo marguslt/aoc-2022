@@ -2,7 +2,6 @@
 library(dplyr, warn.conflicts = F)
 library(readr)
 library(testthat)
-library(tidyverse)
 source("helpers/aoc.R")
 
 test <- list(t = get_sample())
