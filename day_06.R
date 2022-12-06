@@ -1,5 +1,5 @@
 # -------------------------------------------------------------------------
-library(dplyr, warn.conflicts = F)
+library(stringr)
 library(readr)
 library(testthat)
 source("helpers/aoc.R")
